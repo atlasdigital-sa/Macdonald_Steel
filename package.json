@@ -7,7 +7,7 @@
     "prebuild": "node scripts/clean-dist.mjs",
     "predev": "npm run build",
     "dev": "node server.mjs",
-    "build": "esbuild src/main.jsx --bundle --outdir=dist --entry-names=app --format=esm --jsx=automatic && node scripts/copy-static.mjs",
+    "build": "vite build",
     "preview": "node server.mjs"
   },
   "dependencies": {
@@ -15,6 +15,6 @@
     "react-dom": "latest"
   },
   "devDependencies": {
-    "esbuild": "^0.28.1"
+    "vite": "^8.1.5"
   }
 }
