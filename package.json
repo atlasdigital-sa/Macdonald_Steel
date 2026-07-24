@@ -4,9 +4,10 @@
   "version": "1.0.0",
   "type": "module",
   "scripts": {
+    "prebuild": "node scripts/clean-dist.mjs",
     "predev": "npm run build",
     "dev": "node server.mjs",
-    "build": "esbuild src/main.jsx --bundle --outfile=public/app.js --format=esm --jsx=automatic",
+    "build": "esbuild src/main.jsx --bundle --outdir=dist --entry-names=app --format=esm --jsx=automatic && node scripts/copy-static.mjs",
     "preview": "node server.mjs"
   },
   "dependencies": {

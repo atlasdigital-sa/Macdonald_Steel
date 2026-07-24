@@ -3,12 +3,12 @@ import { readFile } from 'node:fs/promises'
 import { extname, join, normalize } from 'node:path'
 
 const root = process.cwd()
-const publicDir = join(root, 'public')
+const publicDir = join(root, 'dist')
 const types = { '.html':'text/html; charset=utf-8', '.css':'text/css; charset=utf-8', '.js':'text/javascript; charset=utf-8', '.png':'image/png', '.jpg':'image/jpeg', '.jpeg':'image/jpeg', '.svg':'image/svg+xml', '.ico':'image/x-icon' }
 
 const server = createServer(async (request, response) => {
   const pathname = decodeURIComponent(new URL(request.url, `http://${request.headers.host}`).pathname)
-  const file = pathname === '/' ? join(root, 'index.html') : join(publicDir, normalize(pathname).replace(/^[/\\]+/, ''))
+  const file = pathname === '/' ? join(publicDir, 'index.html') : join(publicDir, normalize(pathname).replace(/^[/\\]+/, ''))
   try {
     const data = await readFile(file)
     response.writeHead(200, { 'Content-Type': types[extname(file)] || 'application/octet-stream' })
