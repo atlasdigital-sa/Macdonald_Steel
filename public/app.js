@@ -22064,13 +22064,14 @@ function App() {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
   const requestQuote = () => {
+    const showQuoteForm = () => document.querySelector(".contact-page form input")?.scrollIntoView({ behavior: "smooth", block: "center" });
     if (page !== "contact") {
       location.hash = "contact";
       setPage("contact");
       setMenu(false);
-      setTimeout(() => document.querySelector(".contact-page form")?.scrollIntoView({ behavior: "smooth", block: "start" }), 0);
+      setTimeout(showQuoteForm, 0);
     } else {
-      document.querySelector(".contact-page form")?.scrollIntoView({ behavior: "smooth", block: "start" });
+      showQuoteForm();
     }
   };
   return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(import_jsx_runtime.Fragment, { children: [
