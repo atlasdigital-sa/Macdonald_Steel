@@ -11,9 +11,10 @@
     "preview": "node server.mjs"
   },
   "dependencies": {
-    "@vitejs/plugin-react": "^4.3.4",
     "react": "latest",
-    "react-dom": "latest",
-    "vite": "^4.5.5"
+    "react-dom": "latest"
+  },
+  "devDependencies": {
+    "esbuild": "^0.28.1"
   }
 }
