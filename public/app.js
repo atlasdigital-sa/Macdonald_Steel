@@ -22063,27 +22063,31 @@ function App() {
     setMenu(false);
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
+  const requestQuote = () => {
+    if (page !== "contact") {
+      location.hash = "contact";
+      setPage("contact");
+      setMenu(false);
+      setTimeout(() => document.querySelector(".contact-page form")?.scrollIntoView({ behavior: "smooth", block: "start" }), 0);
+    } else {
+      document.querySelector(".contact-page form")?.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  };
   return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(import_jsx_runtime.Fragment, { children: [
-    /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("header", { children: [
-      /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { className: "utility", children: [
-        /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { children: "EST. 1970 \xB7 INDUSTRY EXPERTS FOR OVER 50 YEARS" }),
-        /* @__PURE__ */ (0, import_jsx_runtime.jsx)("a", { href: "tel:+27314505200", children: "031 450 5200" })
-      ] }),
-      /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { className: "nav-wrap", children: [
-        /* @__PURE__ */ (0, import_jsx_runtime.jsx)("button", { className: "logo-btn", onClick: () => go("home"), children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("img", { src: "/macdonald-steel-logo.png", alt: "Macdonald Steel" }) }),
-        /* @__PURE__ */ (0, import_jsx_runtime.jsx)("nav", { className: menu ? "open" : "", children: nav.map(([id, label]) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)("button", { className: page === id ? "active" : "", onClick: () => go(id), children: label }, id)) }),
-        /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { className: "nav-actions", children: [
-          /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("button", { className: "quote-pill", onClick: () => go("contact"), children: [
-            "Request a quote ",
-            /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { children: "\u2197" })
-          ] }),
-          /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("button", { className: "hamburger", "aria-label": "Menu", onClick: () => setMenu(!menu), children: [
-            /* @__PURE__ */ (0, import_jsx_runtime.jsx)("i", {}),
-            /* @__PURE__ */ (0, import_jsx_runtime.jsx)("i", {})
-          ] })
+    /* @__PURE__ */ (0, import_jsx_runtime.jsx)("header", { children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { className: "nav-wrap", children: [
+      /* @__PURE__ */ (0, import_jsx_runtime.jsx)("button", { className: "logo-btn", onClick: () => go("home"), children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("img", { src: "/macdonald-steel-logo.png", alt: "Macdonald Steel" }) }),
+      /* @__PURE__ */ (0, import_jsx_runtime.jsx)("nav", { className: menu ? "open" : "", children: nav.map(([id, label]) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)("button", { className: page === id ? "active" : "", onClick: () => go(id), children: label }, id)) }),
+      /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { className: "nav-actions", children: [
+        /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("button", { className: "quote-pill", onClick: requestQuote, children: [
+          "Request a quote ",
+          /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { children: "\u2197" })
+        ] }),
+        /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("button", { className: "hamburger", "aria-label": "Menu", onClick: () => setMenu(!menu), children: [
+          /* @__PURE__ */ (0, import_jsx_runtime.jsx)("i", {}),
+          /* @__PURE__ */ (0, import_jsx_runtime.jsx)("i", {})
         ] })
       ] })
-    ] }),
+    ] }) }),
     page === "home" && /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Home, { go }),
     page === "products" && /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Products, { select: setSelected }),
     page === "industries" && /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Industries, { go }),
