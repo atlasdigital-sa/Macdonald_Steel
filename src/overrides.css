@@ -19,6 +19,7 @@
 .specular-button.btn,.specular-button.quote-pill,.specular-button.section-link-button,.specular-button.quality-link-button{overflow:visible}
 .quote-pill .specular-button__fx{inset:-8px}
 .quote-pill .specular-button__fx canvas{position:absolute;inset:0}
+.quote-pill .specular-button__fx{display:none}
 
 .wandile-page{padding:110px max(28px,calc((100% - 1120px)/2));display:grid;grid-template-columns:1fr 1fr;gap:110px;background:#e6e2d9}.wandile-page>div>p:last-child{max-width:510px;color:#625f5a;line-height:1.8}.wandile-points{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:#c8c2b8}.wandile-points article{min-height:145px;padding:22px;background:var(--paper);display:flex;flex-direction:column;justify-content:space-between;transition:background .3s,color .3s,transform .3s}.wandile-points article:hover{background:var(--ink);color:#fff;transform:translateY(-3px)}.wandile-points b{font:500 10px var(--mono);color:var(--red)}.wandile-points span{font-size:18px;line-height:1.25;letter-spacing:-.03em}
 
@@ -29,3 +30,13 @@
 @keyframes hero-sweep{0%,65%{transform:translateX(-55%)}100%{transform:translateX(55%)}}@keyframes spin{to{transform:rotate(360deg)}}
 @media(prefers-reduced-motion:reduce){.reveal-ready{opacity:1;transform:none;transition:none}.page-lead:after{animation:none}.feature-grid article,.catalogue-card,.quality-cards article,.industry-page article,.whatsapp-float{transition:none}}
 @media(max-width:800px){.nav-wrap{width:100%;height:auto;min-height:104px;display:flex;flex-wrap:wrap;gap:8px;overflow:visible;padding:13px 0 8px}.nav-wrap .logo-btn{margin-left:18px}.logo-btn img{width:150px;height:42px;object-position:left center}.nav-wrap nav{order:2;width:100%;display:flex!important;gap:19px;margin:0;overflow-x:auto;scrollbar-width:none;padding:8px 18px 3px;border-top:1px solid var(--line)}.nav-wrap nav::-webkit-scrollbar{display:none}.nav-wrap nav button{white-space:nowrap;flex:0 0 auto;padding:7px 0}.feature-grid>.home-product-glow.wide{grid-row:span 2}.product-image-glow{height:160px}.wandile-page{display:block;padding:75px 25px}.wandile-points{margin-top:38px}.whatsapp-float{right:15px;bottom:15px;padding:11px}.whatsapp-float span{display:none}.contact-page form label:first-child{scroll-margin-top:150px}}
+
+/* Footer social icons retain their official colors; hover adds glow only. */
+.social-links svg{transition:filter .3s ease}.social-links a:nth-child(1) svg{color:#1877f2}.social-links a:nth-child(2) svg{color:#0a66c2}.social-links a:nth-child(3) svg{color:#e4405f}.social-links a:nth-child(4) svg{color:#ff0000}.social-links a:hover{color:#f4f1eb}.social-links a:hover svg{transform:none}
+.social-links a:nth-child(3):hover svg{filter:drop-shadow(0 0 4px rgba(228,64,95,.9)) drop-shadow(0 0 10px rgba(228,64,95,.68)) drop-shadow(0 0 18px rgba(228,64,95,.42))}.social-links a:nth-child(4):hover svg{filter:drop-shadow(0 0 4px rgba(255,0,0,.95)) drop-shadow(0 0 11px rgba(255,0,0,.78)) drop-shadow(0 0 22px rgba(255,0,0,.58))}
+
+/* Keep the existing WhatsApp button styling while making its contents white. */
+.whatsapp-float,.whatsapp-float svg,.whatsapp-float span{color:#fff;fill:#fff}
+
+/* White lettermarks inside their official Facebook and LinkedIn brand badges. */
+.social-links a:nth-child(1) svg{color:#fff;background:#1877f2;border-radius:50%}.social-links a:nth-child(2) svg{color:#fff;background:#0a66c2;border-radius:2px}.social-links a:nth-child(1):hover svg{filter:drop-shadow(0 0 4px rgba(24,119,242,.95)) drop-shadow(0 0 11px rgba(24,119,242,.8)) drop-shadow(0 0 22px rgba(24,119,242,.6))}.social-links a:nth-child(2):hover svg{filter:drop-shadow(0 0 4px rgba(10,102,194,.95)) drop-shadow(0 0 11px rgba(10,102,194,.8)) drop-shadow(0 0 22px rgba(10,102,194,.6))}
