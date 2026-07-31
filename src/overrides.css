@@ -40,3 +40,60 @@
 
 /* White lettermarks inside their official Facebook and LinkedIn brand badges. */
 .social-links a:nth-child(1) svg{color:#fff;background:#1877f2;border-radius:50%}.social-links a:nth-child(2) svg{color:#fff;background:#0a66c2;border-radius:2px}.social-links a:nth-child(1):hover svg{filter:drop-shadow(0 0 4px rgba(24,119,242,.95)) drop-shadow(0 0 11px rgba(24,119,242,.8)) drop-shadow(0 0 22px rgba(24,119,242,.6))}.social-links a:nth-child(2):hover svg{filter:drop-shadow(0 0 4px rgba(10,102,194,.95)) drop-shadow(0 0 11px rgba(10,102,194,.8)) drop-shadow(0 0 22px rgba(10,102,194,.6))}
+
+/* Premium transparent navigation — integrated into the cinematic hero. */
+.site-header{position:fixed;inset:0 0 auto;z-index:1000;height:92px;background:rgba(0,0,0,.18);color:#fff;border-bottom:1px solid rgba(255,255,255,.08);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);box-shadow:none;transition:background .3s ease,backdrop-filter .3s ease,box-shadow .3s ease,transform .3s ease}
+.site-header:before{content:"";position:absolute;inset:0 0 auto;height:1px;background:linear-gradient(90deg,transparent,rgba(255,255,255,.18),transparent);opacity:.6;pointer-events:none}
+.site-header.scrolled{background:rgba(10,10,10,.72);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);box-shadow:0 8px 30px rgba(0,0,0,.25)}
+.site-header .nav-wrap{position:relative;width:100%;max-width:none;height:92px;min-height:0;margin:0;padding:0 64px;display:flex;flex-wrap:nowrap;align-items:center;gap:28px;overflow:visible}
+.site-header .logo-btn{position:relative;z-index:2;flex:0 0 auto;margin:0}
+.site-header .logo-btn img{width:205px;height:56px;object-fit:contain;object-position:left center}
+.site-header .gooey-nav-container{position:absolute;left:50%;margin:0;transform:translateX(-50%);isolation:auto}
+.site-header .gooey-nav-container .effect{display:none}
+.site-header .gooey-nav-container nav ul{gap:34px;color:#fff}
+.site-header .gooey-nav-container nav ul li{border-radius:0;color:#fff;box-shadow:none;text-shadow:0 1px 14px rgba(0,0,0,.35)}
+.site-header .nav-wrap .gooey-nav-container nav ul li:after{content:"";position:absolute;inset:auto 0 -4px;height:2px;border-radius:0;background:#e31e24;opacity:1;transform:scaleX(0);transform-origin:left;transition:transform .25s ease;z-index:1}
+.site-header .gooey-nav-container nav ul li:hover:after,.site-header .gooey-nav-container nav ul li.active:after{transform:scaleX(1)}
+.site-header .gooey-nav-container nav ul li.active{color:#fff;font-weight:600}
+.site-header .gooey-nav-container nav ul li a{padding:12px 0 10px;color:#fff!important;font-family:Inter,Manrope,Sora,sans-serif;font-size:15px;font-weight:500;line-height:1;letter-spacing:.2px;white-space:nowrap}
+.site-header .gooey-nav-container nav ul li.active a{font-weight:600;filter:brightness(1.12)}
+.site-header .gooey-nav-container nav ul li:focus-within:has(:focus-visible){box-shadow:none;outline:2px solid #e31e24;outline-offset:5px}
+.site-header .nav-actions{position:relative;z-index:2;margin-left:auto;display:flex;align-items:center;gap:14px}
+.site-header .quote-pill,.site-header .specular-button.quote-pill{min-width:156px;padding:13px 17px;border:0;border-radius:0;background:var(--red);color:#fff;font:500 10px/1 var(--mono);letter-spacing:.1em;text-transform:uppercase;box-shadow:none;transition:transform .15s ease,filter .2s ease,box-shadow .2s ease}
+.site-header .quote-pill:hover{background:var(--red);transform:none;filter:brightness(1.13) saturate(1.08);box-shadow:0 0 0 1px color-mix(in srgb,var(--red) 70%,white),0 8px 22px color-mix(in srgb,var(--red) 32%,transparent)}
+.site-header .quote-pill .specular-button__label>span{display:inline-block;margin-left:8px;color:#fff;font-size:15px;transition:none}
+.site-header .quote-pill:hover .specular-button__label>span{transform:none}
+.mobile-menu-toggle{display:none;width:44px;height:44px;padding:0;border:1px solid rgba(255,255,255,.18);border-radius:12px;background:rgba(255,255,255,.06);align-items:center;justify-content:center;flex-direction:column;gap:5px}
+.mobile-menu-toggle i{display:block;width:18px;height:1.5px;background:#fff;transition:transform .25s ease,opacity .2s ease}
+.mobile-menu-toggle:focus-visible{outline:2px solid #e31e24;outline-offset:3px}
+.site-header.menu-open .mobile-menu-toggle i:nth-child(1){transform:translateY(6.5px) rotate(45deg)}
+.site-header.menu-open .mobile-menu-toggle i:nth-child(2){opacity:0}
+.site-header.menu-open .mobile-menu-toggle i:nth-child(3){transform:translateY(-6.5px) rotate(-45deg)}
+.mobile-menu{position:absolute;top:92px;left:0;right:0;max-height:0;overflow:hidden;visibility:hidden;opacity:0;transform:translateY(-10px);background:rgba(0,0,0,.92);-webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px);border-bottom:1px solid rgba(255,255,255,.08);box-shadow:0 22px 50px rgba(0,0,0,.28);transition:max-height .35s ease,opacity .25s ease,transform .25s ease,visibility .25s}
+.mobile-menu.open{max-height:560px;visibility:visible;opacity:1;transform:none}
+.mobile-menu nav{display:flex;flex-direction:column;gap:20px;padding:28px 32px 34px}
+.mobile-menu a{position:relative;width:max-content;color:#fff;text-decoration:none;font:500 18px/1.25 Inter,Manrope,Sora,sans-serif;opacity:0;transform:translateY(-8px);transition:opacity .25s ease,transform .25s ease,color .2s ease}
+.mobile-menu.open a{opacity:1;transform:none}
+.mobile-menu.open a:nth-child(2){transition-delay:35ms}.mobile-menu.open a:nth-child(3){transition-delay:70ms}.mobile-menu.open a:nth-child(4){transition-delay:105ms}.mobile-menu.open a:nth-child(5){transition-delay:140ms}.mobile-menu.open a:nth-child(6){transition-delay:175ms}.mobile-menu.open a:nth-child(7){transition-delay:210ms}
+.mobile-menu a:after{content:"";position:absolute;left:0;right:0;bottom:-7px;height:2px;background:#e31e24;transform:scaleX(0);transform-origin:left;transition:transform .25s ease}
+.mobile-menu a:hover:after,.mobile-menu a.active:after{transform:scaleX(1)}
+.mobile-menu a.active{font-weight:600}
+.page-lead:before{content:"";position:absolute;z-index:1;inset:0 0 auto;height:300px;background:linear-gradient(to bottom,rgba(0,0,0,.55) 0%,rgba(0,0,0,.22) 45%,rgba(0,0,0,0) 100%);pointer-events:none}
+
+@media(max-width:1024px){
+  .site-header .nav-wrap{padding:0 32px}
+  .site-header .gooey-nav-container{display:none}
+  .mobile-menu-toggle{display:flex}
+}
+@media(max-width:600px){
+  .site-header .nav-wrap{padding:0 20px;gap:10px}
+  .site-header .logo-btn img{width:138px;height:48px}
+  .site-header .nav-actions{gap:8px}
+  .site-header .quote-pill,.site-header .specular-button.quote-pill{min-width:0;padding:12px 13px;border-radius:0;font-size:9px;letter-spacing:.08em}
+  .site-header .quote-pill .specular-button__label>span{margin-left:4px;font-size:11px}
+  .mobile-menu-toggle{width:40px;height:40px;border-radius:10px}
+  .mobile-menu nav{padding:28px 20px 34px}
+}
+@media(prefers-reduced-motion:reduce){
+  .site-header,.site-header *{scroll-behavior:auto;transition:none!important;animation:none!important}
+}
